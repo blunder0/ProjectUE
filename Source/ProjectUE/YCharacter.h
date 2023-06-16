@@ -19,15 +19,20 @@ public:
 	AYCharacter();
 
 protected:
-
-	UPROPERTY(VisibleAnywhere)
+	//属性公开
+	UPROPERTY(VisibleAnywhere);
+	//初始化，指针
 	USpringArmComponent* SpringArmComp;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere);
 	UCameraComponent* CameraComp;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
+	//向前移动，给值，1向前，-1向后
+	void MoveForward(float Value);
+	void MoveRight(float Value);
 
 public:	
 	// Called every frame
